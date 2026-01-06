@@ -27,7 +27,7 @@ jobs:
           # CINTENT >> REMOVE_MATRIX
           # - { os: ubuntu-latest, python-version: '3.9', pandas-version: '2.2.0' }
 
-          - { os: ubuntu-latest, python-version: '3.9', pandas-version: 'latest' }
+          - { os: ubuntu-latest, python-version: '3.11', pandas-version: 'latest' }
 
     defaults:
       run:
@@ -39,12 +39,12 @@ jobs:
 
     steps:
       - name: Set up Python Version
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.config.python-version }}
 
       - name: Check-out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # CINTENT >> INSERT_CINTENT
       - uses: JavidDitty/setup-cintent@a606c80c34ec190c6a20dea33d6d58ddb6c4e0cc
